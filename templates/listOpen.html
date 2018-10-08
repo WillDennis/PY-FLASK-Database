@@ -1,0 +1,30 @@
+<!--
+Author : William Dennis - 100157542
+Version : 1.0
+Date : 08/05/18
+-->
+<!--Template for Open Ticket Data-->
+<body>
+<!--Heading-->
+    <h1> List of Open Tickets </h1>
+    <table border = 1>
+    <tr><!--Table Headings-->
+        <th>TicketID</th> <th>Problem</th> <th>Status </th> <th>Priority</th> <th>LoggedTime</th> <th>CustomerID</th>  <th>ProductID</th>
+    </tr>
+    <!--Automatically fills rows with data from database upon request-->
+    {% for row in rows %}
+        <tr>
+            {% for item in row%}
+                <td>
+                    {{item}}
+                </td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+    </table>
+    <br>
+    <!--Return form to index.html-->
+    <form action = "/" method = "GET" >
+        <input type = "submit" value = "Back" >
+    </form>
+</body>
